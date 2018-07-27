@@ -1,0 +1,63 @@
+body{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.6rem
+}
+
+section{
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+h1{display: block;}
+
+dd{font-size: 0.8em;}
+
+p{line-height: 2em;}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
+
+form{
+    border: 1px solid rgb(0, 120, 248,0.3);
+    padding: 10px;
+    margin:5px auto;
+    width:67%;
+    position: relative;
+    font-size: 0.5em;
+}
+
+#btn-container  button{width:100%;}
+
+img{max-width:100%;}
+
+#produntImg{max-width: 40px;}
+
+#headingOne{font-size: 1em;}
+
+#home{
+    background-image: url(app/img/bg-masthead.jpg);
+    background-size: cover; 
+    font-family: 'Kirang Haerang', cursive;
+    font-size: 1.6em;
+    
+}
+
+#home,#partners{background-color:rgb(248, 249, 250);}
+
+#about,#contact{background-color:rgba(232, 229, 229, 0.6);}
+
+
+#image-hear{
+    background-image: url(app/img/31670456-illustration-pregnancy.jpg);
+    background-position: center center;
+    max-width:500px;
+}
+
+.col-sm-10 {width: auto;}
