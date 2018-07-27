@@ -1,6 +1,6 @@
 app.factory('productListSrv', function ($http, $q) {
 
-    var SERVER = 'https://json-server-heroku-mxzyipueqm.now.sh';
+    var SERVER = 'https://json-server-heroku-ffwloyiqam.now.sh';
   
     function Product(productName, description, price, zone, brand, image, isAddToCart) {
         this.productName = productName;
