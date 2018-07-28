@@ -14,7 +14,8 @@ app.config(function ($routeProvider) {
             controller: 'myListCtrl'
         })
         .when("/login", {
-            templateUrl: "app/login/login.html"
+            templateUrl: "app/login/login.html",
+            controller: 'loginCtrl'
 
         })
         .when("/mylink", {

@@ -1,28 +1,33 @@
-app.factory('userSrv', function () {
+app.factory('userSrv', function ($http, $q) {
 
-    var SERVER = 'https://final-course-xqysoipzwa.now.sh';
-    var activeUser = null;
+    // var activeUser = null;
+    var activeUser = new User({id:"1", email: 'lior@lior.com'});
 
 
-    function User(email) {
-        this.email = email;
+
+    function User(plainUser) {
+        this.email = plainUser.email;
+        this.id = plainUser.id
     }
 
-    function isLoggedIn() {        
-        // return activeUser ? true : false
-        return true;
+    function isLoggedIn() {
+        return activeUser ? true : false
+    }
+
+    function logout() {
+        activeUser = null;
     }
 
     function login(email, password) {
         var async = $q.defer();
-        var loginURL = SERVER + '/users?email=' + email + "&password=" + password
+        var loginURL = 'https://json-server-heroku-ffwloyiqam.now.sh' + '/users?email=' + email + "&password=" + password
         $http.get(loginURL).then(function (response) {
             if (response.data.length > 0) {
 
                 activeUser = new User(response.data[0]);
                 async.resolve(activeUser);
             } else {
-                async.reject('invalid credentials');
+                async.reject('invalid Credentials');
             }
         }, function (err) {
             async.reject(err);
@@ -30,10 +35,14 @@ app.factory('userSrv', function () {
         return async.promise;
     };
 
+    function getActiveUser() {
+        return activeUser;
+    }
+
     return {
-        readFile: readFile,
-        SERVER: SERVER,
+        login: login,
         isLoggedIn: isLoggedIn,
-        login: login
+        logout: logout,
+        getActiveUser: getActiveUser
     }
 });
