@@ -1,7 +1,7 @@
 app.factory('userSrv', function ($http, $q) {
 
     // var activeUser = null;
-    var activeUser = new User({id:"1", email: 'lior@lior.com',phone: "0525727333", shippingAddress:"hertzel", password: "123" });
+    var activeUser = new User({ id: "1", email: 'lior@lior.com', phone: "0525727333", shippingAddress: "hertzel", password: "123" });
 
 
 
@@ -10,7 +10,7 @@ app.factory('userSrv', function ($http, $q) {
         this.email = plainUser.email;
         this.phone = plainUser.phone;
         this.shippingAddress = plainUser.shippingAddress;
-        this.password = password
+        this.password = plainUser.password
     }
 
     function isLoggedIn() {

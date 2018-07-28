@@ -28,6 +28,9 @@ app.config(function ($routeProvider) {
             templateUrl: "app/signup/signup.html"
 
         })
+        .when("/products/:id", {
+        
+        })
         .otherwise({
             redirectTo: '/'
         });
